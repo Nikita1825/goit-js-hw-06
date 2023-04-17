@@ -6,11 +6,11 @@ const ingredients = [
   'Herbs',
   'Condiments',
 ];
-const ingredientsUl = document.createElement("ul");
-for (const ingredient of ingredients) {
+const ingredientsUl = document.getElementById("ingredients");
+const items = ingredients.map(ingredient => {
   const ulLi = document.createElement("li");
   ulLi.textContent = ingredient;
   ulLi.classList.add("item");
-  ingredientsUl.appendChild(ulLi)
-}
-console.log(ingredientsUl);
+  return ulLi
+});
+ingredientsUl.append(...items);
